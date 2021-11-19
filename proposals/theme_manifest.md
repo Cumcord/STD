@@ -35,3 +35,7 @@ declare class ThemeManifest {
  media?:      URL;
 }
 ```
+
+---
+
+Author: Yellowsink <yellowsink@protonmail.com>
