@@ -18,3 +18,20 @@ Standardise and document the manifest format (new-BD-style), what the fields mus
 
 ## General Implementation Details
  - only new BD style manifests should be carried forward into CC themes - not `//META`-style manifests
+
+I propose the following TypeScript declaration, not because it has any direct use,
+but purely to concretely define the data structure required:
+```ts
+declare class ThemeManifest {
+ // The name of the theme
+ name:        string;
+ // A more detail description for extra info about the theme
+ description: string;
+ // Who wrote the theme; not required to be just one person
+ author:      string;
+ // An SPDX identifier for the license of your theme content - https://spdx.org/licenses/
+ license:     string;
+ // The absolute URL of an image to go with your theme, screenshot or otherwise
+ media?:      URL;
+}
+```
