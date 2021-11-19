@@ -64,7 +64,7 @@ The following are two examples of acceptable manifests:
 {
   "name": "My awesome plugin",
   "description": "A plugin that does a thing to your Discord, thus being awesome",
-  "author": "Yellowsink",
+  "author": "generic name",
   "file": "index.js",
   "license": "Unlicense"
 }
@@ -73,7 +73,7 @@ The following are two examples of acceptable manifests:
 {
   "name": "My awesome plugin",
   "description": "A plugin that has a cool screenshot",
-  "author": "Yellowsink",
+  "author": "generic name",
   "file": "index.js",
   "license": "Unlicense",
   "media": "https://cumcord.com/assets/screenshots/lmao.png"
