@@ -1,4 +1,4 @@
-# Plugin manifest standards proposal
+# Theme manifest standards proposal
 
 ## Description Of Issue
 Theme manifests should be documented and standardised. While themes are not part of Cumcord itself,
