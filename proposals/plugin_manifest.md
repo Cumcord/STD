@@ -55,7 +55,7 @@ I propose the following schema:
       "type": "string"
     }
   },
-  "required": [ "name", "description", "author", "file", "license" ]
+  "required": [ "name", "description", "author", "file" ]
 }
 ```
 
@@ -75,7 +75,6 @@ The following are two examples of acceptable manifests:
   "description": "A plugin that has a cool screenshot",
   "author": "generic name",
   "file": "index.js",
-  "license": "Unlicense",
   "media": "https://cumcord.com/assets/screenshots/lmao.png"
 }
 ```
