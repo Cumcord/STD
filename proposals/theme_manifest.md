@@ -27,6 +27,8 @@ declare class ThemeManifest {
  name:        string;
  // A more detail description for extra info about the theme
  description: string;
+ // The Discord ID of the theme's author - only one allowed, prioritised over author
+ authorId?:   string;
  // Who wrote the theme; not required to be just one person
  author:      string;
  // An SPDX identifier for the license of your theme content - https://spdx.org/licenses/
