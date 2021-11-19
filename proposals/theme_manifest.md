@@ -33,6 +33,8 @@ declare class ThemeManifest {
  license:     string;
  // The absolute URL of an image to go with your theme, screenshot or otherwise
  media?:      URL;
+ // The absolute URL to the source code repo of the theme
+ source?:     URL;
 }
 ```
 
