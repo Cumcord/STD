@@ -38,6 +38,21 @@ declare class ThemeManifest {
 }
 ```
 
+The following is an acceptable manifest format. It should be placed as the very first thing in a CSS file:
+```css
+/**
+ * @name My awesome theme
+ * @authorId 435026627907420161
+ * @author generic name
+ * @version 1.0
+ * @description A cool theme to demonstrate manifests
+ * @source https://example.com/generic_name/my_awesome_theme_repo
+ * @website https://example.com/cooltheme.html
+*/
+
+/* write theme here - THIS COMMENT IS NOT PART OF THE MANIFEST */
+```
+
 ---
 
 Author: Yellowsink <yellowsink@protonmail.com>
