@@ -58,3 +58,7 @@ I propose the following schema:
   "required": [ "name", "description", "author", "file", "license" ]
 }
 ```
+
+---
+
+Author: Yellowsink <yellowsink@protonmail.com>
