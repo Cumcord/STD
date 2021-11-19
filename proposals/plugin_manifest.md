@@ -59,6 +59,27 @@ I propose the following schema:
 }
 ```
 
+The following are two examples of acceptable manifests:
+```json
+{
+  "name": "My awesome plugin",
+  "description": "A plugin that does a thing to your Discord, thus being awesome",
+  "author": "Yellowsink",
+  "file": "index.js",
+  "license": "Unlicense"
+}
+```
+```json
+{
+  "name": "My awesome plugin",
+  "description": "A plugin that has a cool screenshot",
+  "author": "Yellowsink",
+  "file": "index.js",
+  "license": "Unlicense",
+  "media": "https://cumcord.com/assets/screenshots/lmao.png"
+}
+```
+
 ---
 
 Author: Yellowsink <yellowsink@protonmail.com>
