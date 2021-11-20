@@ -32,7 +32,7 @@ declare class ThemeManifest {
  // Who wrote the theme; not required to be just one person
  author:      string;
  // An SPDX identifier for the license of your theme content - https://spdx.org/licenses/
- license:     string;
+ license?:    string;
  // The absolute URL of an image to go with your theme, screenshot or otherwise
  media?:      URL;
  // The absolute URL to the source code repo of the theme
