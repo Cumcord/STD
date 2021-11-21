@@ -52,14 +52,17 @@ I propose the following schema:
     },
     "media": {
       "description": "The absolute URL of an image to display with your plugin",
-      "type": "string"
+      "type": [ "array", "string" ],
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": [ "name", "description", "author", "file" ]
 }
 ```
 
-The following are two examples of acceptable manifests:
+The following are examples of acceptable manifests:
 ```json
 {
   "name": "My awesome plugin",
@@ -76,6 +79,15 @@ The following are two examples of acceptable manifests:
   "author": "generic name",
   "file": "index.js",
   "media": "https://cumcord.com/assets/screenshots/lmao.png"
+}
+```
+```json
+{
+  "name": "My awesome plugin",
+  "description": "A plugin that has lots of cool screenshot",
+  "author": "generic name",
+  "file": "index.js",
+  "media": [ "https://cumcord.com/assets/screenshots/lmao.png", "https://cumcord.com/piss.png" ]
 }
 ```
 
