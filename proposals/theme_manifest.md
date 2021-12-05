@@ -36,10 +36,6 @@ I propose the following schema:
       "description": "A more detail description for extra info about the theme",
       "type": "string"
     },
-    "authorId": {
-      "description": "The Discord ID of the theme's author - only one allowed, prioritised over author",
-      "type": "string"
-    },
     "author": {
       "description": "Who wrote the plugin; not required to be just one person",
       "type": "string"
@@ -54,10 +50,6 @@ I propose the following schema:
       "items": {
         "type": "string"
       }
-    },
-    "source": {
-      "description": "A link to of the source code repo of the theme",
-      "type": "string"
     }
   },
   "required": [ "name", "description", "author" ]
@@ -69,15 +61,13 @@ For example the media field may be just a single string, and some fields may be 
 ```json
 {
   "name": "My awesome theme",
-  "description": "A cool theme to demonstrate manifests",
-  "authorId": "123456789012345678",
+  "description": "A cool theme to demonstrate manifests"
   "author": "generic name",
   "license": "BSD-3",
   "media": [
     "https://cumcord.com/assets/screenshots/codcum.png",
     "https://cumcord.com/assets/screenshots/lmao.png"
-  ],
-  "source": "https://example.com/generic_name/my_awesome_theme_repo"
+  ]
 }
 
 ```
