@@ -6,7 +6,7 @@ they are an essential part of most users' client mod experience,
 so when theme loader plugins inevitably appear, the manifest (and repo) formats should be standardised and cross-compatible.
 
 ## Solution
-Standardise and document the manifest format (new-BD-style), what the fields must be, and what each is for.
+Standardise and document the manifest format, what the fields must be, and what each is for.
 
 ## Advantages
 
@@ -17,42 +17,69 @@ Standardise and document the manifest format (new-BD-style), what the fields mus
  - locks down possibly helpful info that can be included in manifests
 
 ## General Implementation Details
- - only new BD style manifests should be carried forward into CC themes - not `//META`-style manifests
+ - use plugin manifest -like json manifests
 
-I propose the following TypeScript declaration, not because it has any direct use,
-but purely to concretely define the data structure required:
-```ts
-declare class ThemeManifest {
- // The name of the theme
- name:        string;
- // A more detail description for extra info about the theme
- description: string;
- // The Discord ID of the theme's author - only one allowed, prioritised over author
- authorId?:   string;
- // Who wrote the theme; not required to be just one person
- author:      string;
- // An SPDX identifier for the license of your theme content - https://spdx.org/licenses/
- license?:    string;
- // The absolute URL of an image to go with your theme, screenshot or otherwise
- media?:      URL;
- // The absolute URL to the source code repo of the theme
- source?:     URL;
+I propose the following schema:
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "N/A",
+  "title": "Cumcord Theme Manifest",
+  "description": "The manifest format for Cumcord themes",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the theme",
+      "type": "string"
+    },
+    "description": {
+      "description": "A more detail description for extra info about the theme",
+      "type": "string"
+    },
+    "authorId": {
+      "description": "The Discord ID of the theme's author - only one allowed, prioritised over author",
+      "type": "string"
+    },
+    "author": {
+      "description": "Who wrote the plugin; not required to be just one person",
+      "type": "string"
+    },
+    "license": {
+      "description": "An SPDX identifier for the license of your plugin content",
+      "type": "string"
+    },
+    "media": {
+      "description": "The absolute URL of an image to display with your plugin",
+      "type": [ "array", "string" ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "source": {
+      "description": "A link to of the source code repo of the theme",
+      "type": "string"
+    }
+  },
+  "required": [ "name", "description", "author" ]
 }
 ```
 
-The following is an acceptable manifest format. It should be placed as the very first thing in a CSS file:
-```css
-/**
- * @name My awesome theme
- * @authorId 435026627907420161
- * @author generic name
- * @version 1.0
- * @description A cool theme to demonstrate manifests
- * @source https://example.com/generic_name/my_awesome_theme_repo
- * @website https://example.com/cooltheme.html
-*/
+The following is an acceptable manifest format, but anything that matches the manifest is allowed.
+For example the media field may be just a single string, and some fields may be left out.
+```json
+{
+  "name": "My awesome theme",
+  "description": "A cool theme to demonstrate manifests",
+  "authorId": "123456789012345678",
+  "author": "generic name",
+  "license": "BSD-3",
+  "media": [
+    "https://cumcord.com/assets/screenshots/codcum.png",
+    "https://cumcord.com/assets/screenshots/lmao.png"
+  ],
+  "source": "https://example.com/generic_name/my_awesome_theme_repo"
+}
 
-/* write theme here - THIS COMMENT IS NOT PART OF THE MANIFEST */
 ```
 
 ---
