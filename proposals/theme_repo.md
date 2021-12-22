@@ -96,3 +96,7 @@ URLs in the manifest can be either absolute or relative. If absolute, then simpl
 For example: with the import url `https://example.com/` and theme url `test/theme.css`, then the theme will reside at `https://example.com/test/theme.css`.
 
 Theme importing and manifest handling should be handled as of [the theme manifest standard proposal](https://github.com/Cumcord/STD/blob/master/proposals/theme_manifest.md), so import url of themes is the css file, and the theme manifest is at `<import URL>/../cumcord_manifest.json`.
+
+---
+
+Author: Yellowsink <yellowsink@protonmail.com>
