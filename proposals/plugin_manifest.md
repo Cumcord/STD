@@ -91,6 +91,24 @@ The following are examples of acceptable manifests:
 }
 ```
 
+## Import URL & Hosted File Structure
+
+The import URL should be the parent route of the plugin manifest and content.
+
+The plugin content must be bundled in `plugin.js`
+(standardising the content of this file, bundling format etc, is out of scope of this spec).
+
+The plugin manifest must be in `plugin.json`.
+
+In the following example, the import URL is `example.com/my-cool-plugin`.
+```
+|- example.com
+  |- example.com/my-cool-plugin
+    |- example.com/my-cool-plugin/plugin.js
+    |- example.com/my-cool-plugin/plugin.json
+
+```
+
 ---
 
 Author: Yellowsink <yellowsink@protonmail.com>
