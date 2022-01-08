@@ -21,6 +21,8 @@ Standardise and document that the manifest must be a json, what the fields must 
    I think it's sensible to standardise.
  - Require the `license` field to be a valid [SPDX identifer](https://en.wikipedia.org/wiki/Software_Package_Data_Exchange#License_syntax)
 
+**!! NOTE !! The media field is NOT for branding images.**
+
 I propose the following schema:
 ```json
 {
@@ -51,7 +53,7 @@ I propose the following schema:
       "type": "string"
     },
     "media": {
-      "description": "The absolute URL of an image to display with your plugin",
+      "description": "The absolute URL of some example images to demonstrate your plugin. No branding.",
       "type": [ "array", "string" ],
       "items": {
         "type": "string"
