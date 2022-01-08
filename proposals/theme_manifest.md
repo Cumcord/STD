@@ -16,8 +16,7 @@ Standardise and document the manifest format, what the fields must be, and what 
 ## Disadvantages
  - locks down possibly helpful info that can be included in manifests
 
-## General Implementation Details
- - use plugin manifest -like json manifests
+## Manifest Format & Schema
 
 I propose the following schema:
 ```json
@@ -71,6 +70,24 @@ For example the media field may be just a single string, and some fields may be 
 }
 
 ```
+
+## Import URL
+
+The import URL of a theme should be the URL to the theme css file.
+The manifest should be available on the same route as this file as `cumcord_manifest.json`.
+
+In the following example, the import url is `example.com/my-cool-theme/epic_theme.css`,
+and the manifest must be available on `example.com/my-cool-theme/cumcord_manifest.json`.
+```
+|- example.com
+  |- example.com/my-cool-theme
+    |- example.com/my-cool-theme/epic_theme.css
+    |- example.com/my-cool-theme/cumcord_manifest.json
+```
+
+The import URL should always be absolute.
+This may be handled differently when referenced in theme repos (see separate spec),
+but standalone import URLs must always be absolute and to the theme file.
 
 ---
 
