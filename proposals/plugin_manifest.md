@@ -21,6 +21,8 @@ Standardise and document that the manifest must be a json, what the fields must 
    I think it's sensible to standardise.
  - Require the `license` field to be a valid [SPDX identifer](https://en.wikipedia.org/wiki/Software_Package_Data_Exchange#License_syntax)
 
+**!! NOTE !! The media field is NOT for branding images.**
+
 I propose the following schema:
 ```json
 {
@@ -51,7 +53,7 @@ I propose the following schema:
       "type": "string"
     },
     "media": {
-      "description": "The absolute URL of an image to display with your plugin",
+      "description": "The absolute URL of some example images to demonstrate your plugin. No branding.",
       "type": [ "array", "string" ],
       "items": {
         "type": "string"
@@ -89,6 +91,24 @@ The following are examples of acceptable manifests:
   "file": "index.js",
   "media": [ "https://cumcord.com/assets/screenshots/lmao.png", "https://cumcord.com/piss.png" ]
 }
+```
+
+## Import URL & Hosted File Structure
+
+The import URL should be the parent route of the plugin manifest and content.
+
+The plugin content must be bundled in `plugin.js`
+(standardising the content of this file, bundling format etc, is out of scope of this spec).
+
+The plugin manifest must be in `plugin.json`.
+
+In the following example, the import URL is `example.com/my-cool-plugin`.
+```
+|- example.com
+  |- example.com/my-cool-plugin
+    |- example.com/my-cool-plugin/plugin.js
+    |- example.com/my-cool-plugin/plugin.json
+
 ```
 
 ---

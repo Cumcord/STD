@@ -16,8 +16,9 @@ Standardise and document the manifest format, what the fields must be, and what 
 ## Disadvantages
  - locks down possibly helpful info that can be included in manifests
 
-## General Implementation Details
- - use plugin manifest -like json manifests
+## Manifest Format & Schema
+
+**!! NOTE !! The media field is NOT for branding images.**
 
 I propose the following schema:
 ```json
@@ -45,7 +46,7 @@ I propose the following schema:
       "type": "string"
     },
     "media": {
-      "description": "The absolute URL of an image to display with your plugin",
+      "description": "The absolute URL of some images to demonstrate your theme. No branding.",
       "type": [ "array", "string" ],
       "items": {
         "type": "string"
@@ -61,7 +62,7 @@ For example the media field may be just a single string, and some fields may be 
 ```json
 {
   "name": "My awesome theme",
-  "description": "A cool theme to demonstrate manifests"
+  "description": "A cool theme to demonstrate manifests",
   "author": "generic name",
   "license": "BSD-3",
   "media": [
@@ -71,6 +72,24 @@ For example the media field may be just a single string, and some fields may be 
 }
 
 ```
+
+## Import URL
+
+The import URL of a theme should be the URL to the theme css file.
+The manifest should be available on the same route as this file as `cumcord_manifest.json`.
+
+In the following example, the import url is `example.com/my-cool-theme/epic_theme.css`,
+and the manifest must be available on `example.com/my-cool-theme/cumcord_manifest.json`.
+```
+|- example.com
+  |- example.com/my-cool-theme
+    |- example.com/my-cool-theme/epic_theme.css
+    |- example.com/my-cool-theme/cumcord_manifest.json
+```
+
+The import URL should always be absolute.
+This may be handled differently when referenced in theme repos (see separate spec),
+but standalone import URLs must always be absolute and to the theme file.
 
 ---
 
