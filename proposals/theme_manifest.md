@@ -62,7 +62,7 @@ For example the media field may be just a single string, and some fields may be 
 ```json
 {
   "name": "My awesome theme",
-  "description": "A cool theme to demonstrate manifests"
+  "description": "A cool theme to demonstrate manifests",
   "author": "generic name",
   "license": "BSD-3",
   "media": [
