@@ -1,17 +1,20 @@
-# Canary breaking changes standard
+# Canary & build override breaking changes standard
 
 ## Description Of Issue
 
-Changes made to Canary have the chance to break Cumcord and have potential to be merged into stable.
+Changes made to Canary have the chance to break Cumcord and have potential to be merged into stable, as do build overrides.
 
 ## Solution
 
-Hold back updates on the Cumcord stable branch and release updates on master, then merge master into stable when Canary is merged into stable.
+Hold back updates on the Cumcord stable branch and release updates on master, then merge master into stable when Canary is merged into stable,
+or when the build override is applied.
+
+As with inconsequential Canary changes, small inconsequential build overrides can be ignored.
 
 ## Advantages
 
 - Cumcord works properly on stable
-- Cumcord will be fixed immediately upon Canary being merged into stable
+- Cumcord will be fixed immediately upon the change being merged into stable
 
 ## Disadvantages
 
@@ -20,13 +23,15 @@ Hold back updates on the Cumcord stable branch and release updates on master, th
 
 ## Alternatives
 
-### Maintaining a Canary and Stable branch
+### Maintaining a Canary and Stable branch (and a branch for each breaking override)
 
-This would add additional things to maintain and the wasted hours maintaining both branches is unnecessary with other alternatives.
+This would add additional things to maintain and the wasted hours maintaining all branches is unnecessary with other alternatives.
 
 ### Supporting Canary over Stable
 
 This requires less effort than the other proposed solutions, but most Discord users use Stable and Canary is ever-changing. It would not give us time to prepare for breaking changes in Discord.
+
+Also highly infeasible for build overrides.
 
 ## Conclusion
 
