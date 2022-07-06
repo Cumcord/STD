@@ -76,15 +76,15 @@ For example the media field may be just a single string, and some fields may be 
 ## Import URL
 
 The import URL of a theme should be the URL to the theme css file.
-The manifest should be available on the same route as this file as `cumcord_manifest.json`.
+The manifest should be available on the same route as this file as `cumcord_theme.json`.
 
 In the following example, the import url is `example.com/my-cool-theme/epic_theme.css`,
-and the manifest must be available on `example.com/my-cool-theme/cumcord_manifest.json`.
+and the manifest must be available on `example.com/my-cool-theme/cumcord_theme.json`.
 ```
 |- example.com
   |- example.com/my-cool-theme
     |- example.com/my-cool-theme/epic_theme.css
-    |- example.com/my-cool-theme/cumcord_manifest.json
+    |- example.com/my-cool-theme/cumcord_theme.json
 ```
 
 The import URL should always be absolute.
