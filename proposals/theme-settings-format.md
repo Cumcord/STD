@@ -73,7 +73,7 @@ If the same setting prop is encountered twice in the same rule, then only the fi
 | `text`     | `string`              | A textbox. Enough said. Arg is default.                                                  | `text("I love cumcord!!")`     |
 | `number`   | `num, num, num, bool` | A number spinner. Args are min, max, default, int-only.                                  | `number(1.5, 5, 3, false)`     |
 | `slider`   | `num, num, num, num`  | A slider. Args are min, max, default, step.                                              | `slider(1.5, 5, 3, 0.25)`      |
-| `toggle`   | `any, any, bool`      | Switches between two values. Args are off choice, on choice, default.                    | `switch(none, block, true)`    |
+| `toggle`   | `any, any, bool`      | Switches between two values. Args are off choice, on choice, default.                    | `toggle(none, block, true)`    |
 
 #### Optional fields
 
@@ -89,13 +89,13 @@ The default common here is the value of the field to be used if it is not specif
 
 Rules may be toggled on and off. This is done via the `cc-toggle` property, and a selector.
 
-Its notable for the implementation that the classes that make this work should be applied to the `<html>`.
+Its notable for the implementation that the classes that make this work should be applied to the `<html>` / `:root`.
 
-All togglable rules have a selector beginning EITHER `.CUMCORD_TOGGLE_id` or `html:not(.CUMCORD_TOGGLE_id)`. The ID you pick groups all rules with it under the same toggle.
+All togglable rules have a selector beginning EITHER `.CUMCORD_TOGGLE_id` or `:root:not(.CUMCORD_TOGGLE_id)`. The ID you pick groups all rules with it under the same toggle.
 
 One of the rules for each togglable group should have a `cc-toggle` property. If more than one do, only the first encountered one will be used.
 
-The proposed behaviour of `html:not` is slightly strange - but can be justified.
+The proposed behaviour of `:root:not` is slightly strange - but can be justified.
 
 - The parser / implementation ignores the distinction and treats this as if its just a `.CUMCORD_TOGGLE_id`.
 
@@ -116,7 +116,7 @@ The `cc-toggle` property should be made up of the following fields:
 
 A word on `default()`: default may be useful, but may not be suitable in many cases as loading your theme on an environment without support for the format will *not* apply your desired OOTB case.
 
-`inverse()` seems like a really random inclusion, but read about `html:not` above and think about a case where you actually want a toggle that disables a lot of things that are otherwise on by default. `html:not` + `inverse` is the best way to do this.
+`inverse()` seems like a really random inclusion, but read about `:root:not` above and think about a case where you actually want a toggle that disables a lot of things that are otherwise on by default. `html:not` + `inverse` is the best way to do this.
 
 ### @rules / at-rules
 
@@ -145,8 +145,8 @@ Fields are as follows:
     --margin-bigness: 5;
 }
 
-.CUMCORD_TOGGLE_bigmargins div  { margin: calc(1.2rem * var(--margin-size))   }
-.CUMCORD_TOGGLE_bigmargins span { margin: calc(1.2rem * var(--margin-size)) 0 }
+.CUMCORD_TOGGLE_bigmargins div  { margin: calc(1.2rem * var(--margin-bigness))   }
+.CUMCORD_TOGGLE_bigmargins span { margin: calc(1.2rem * var(--margin-bigness)) 0 }
 
 
 .my-element:after {
